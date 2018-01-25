@@ -9,9 +9,9 @@ namespace Notify.Models
     public class Producto
     {
         [Key]
-        public int codigo;
-        public String nombre;
-        public int precio;
+        public int codigo { get; set; }
+        public String nombre { get; set; }
+        public int precio { get; set; }
 
     }
 }
