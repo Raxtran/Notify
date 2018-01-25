@@ -9,9 +9,11 @@ namespace Notify.Models
     public class Usuario
     {
         //Comentario
-        public String idcorreo;
         public String nombre;
-        public String contraseña; 
+        public String contraseña;
+        [Key]
+        public String correo;
 
+        public virtual List<Pedido> envio_correo { get; set; } = new List<Pedido>();
     }
 }
