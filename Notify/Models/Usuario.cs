@@ -8,7 +8,7 @@ namespace Notify.Models
 {
     public class Usuario
     {
-
+        //Comentario
         public String idcorreo;
         public String nombre;
         public String contraseña; 
