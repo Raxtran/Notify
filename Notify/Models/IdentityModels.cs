@@ -21,13 +21,25 @@ namespace Notify.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ApplicationDbContext", throwIfV1Schema: false)
         {
         }
+
+
+        public DbSet<Linea> Linea { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Producto> Producto { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            ///modelBuilder.Entity<>
+        }
+
     }
 }

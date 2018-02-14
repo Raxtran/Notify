@@ -12,7 +12,9 @@ namespace Notify.Models
         public int id_pedido { get; set; }
         public int codigo_linea { get; set; }
         double total { get; set; }
-
+        [StringLength(50)]
+        public String Usuario_pk { get; set; }
+        public virtual Usuario user { get; set; }
 
 
         public virtual List<Linea> envio_id_pedido { get; set; } = new List<Linea>();
