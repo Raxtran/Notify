@@ -1,14 +1,54 @@
-#nav {
-    background-color: #987c67;
-    border-bottom-color: white;
+@media (min-width:768px) {
+    #nav {
+        background-color: #987c67;
+        border-bottom-color: white;
+    }
+
+    #anuncio {
+        margin-top: 3%;
+    }
+
+    body {
+        background-color: #cdb79e;
+    }
+
+    img {
+        margin-top: 15%;
+        margin-bottom: 15%;
+        width: 48px;
+        height: 48px;
+    }
+    .btn {
+        background-color: #ff8351;
+        border: 0px;
+        color: black;
+    }
 }
-#anuncio {
-    margin-top:3%;
-}
-body {
-    background-color: #cdb79e;
-}
-img {
-    margin-top: 15%;
-    margin-bottom: 15%;
+
+@media (max-width:768px) {
+    img {
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-left: 1%;
+        width: 48px;
+        height: 48px;
+    }
+    #nav {
+        background-color: #987c67;
+        border-bottom-color: white;
+    }
+
+    #anuncio {
+        margin-top: 3%;
+    }
+
+    body {
+        background-color: #cdb79e;
+    }
+    .btn {
+        background-color: #ff8351;
+        border: 0px ;
+        color:black;
+    }
+
 }
