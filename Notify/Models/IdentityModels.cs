@@ -28,7 +28,6 @@ namespace Notify.Models
 
         public DbSet<Linea> Linea { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Producto> Producto { get; set; }
 
         public static ApplicationDbContext Create()
@@ -38,7 +37,7 @@ namespace Notify.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            ///modelBuilder.Entity<>
+///            modelBuilder.Entity<>
         }
 
     }

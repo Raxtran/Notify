@@ -58,11 +58,13 @@ namespace Notify
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = " 726269285539-k7l4bebu80ld3kimmso5nbmi224jrrs5.apps.googleusercontent.com",
+                ClientSecret = "F_HIWCPOpNJQsbHVcL9wJ3kf"
+            });
         }
     }
+
+   
 }
