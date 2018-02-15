@@ -23,9 +23,23 @@
         border: 0px;
         color: black;
     }
+    #loginLink {
+        margin-top:8%;
+        color: whitesmoke;
+    }
+    #loginLink:hover {
+        color: orange;       
+    }
 }
 
 @media (max-width:768px) {
+
+    #loginLink {
+        color: whitesmoke;
+    }
+    #loginLink:hover {
+        color: orange;       
+    }
     img {
         margin-top: 1%;
         margin-bottom: 1%;
