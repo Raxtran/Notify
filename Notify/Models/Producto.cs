@@ -9,10 +9,10 @@ namespace Notify.Models
     public class Producto
     {
         [Key]
-        public int codigo;
+        public int codigo { get; set; } 
         [StringLength(50)]
-        public String nombre;
-        public int precio;
+        public String nombre { get; set; }
+        public int precio { get; set; }
 
 
         public virtual List<Linea> envio_nombre_producto { get; set; } = new List<Linea>();

@@ -10,10 +10,10 @@ namespace Notify.Models
     {
         //Comentario
         
-        public String nombre;
-        public String contraseña;
+        public String nombre { get; set; }
+        public String contraseña { get; set; }
         [Key]
-        public String correo;
+        public String correo { get; set; }
 
         public virtual List<Pedido> envio_correo { get; set; } = new List<Pedido>();
     }
