@@ -12,7 +12,7 @@ namespace Notify.Models
         public int codigo { get; set; } 
         [StringLength(50)]
         public String nombre { get; set; }
-        public int precio { get; set; }
+        public double precio { get; set; }
 
 
         public virtual List<Linea> envio_nombre_producto { get; set; } = new List<Linea>();
