@@ -1,16 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+using System.Configuration;
+using System.Diagnostics;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Notify.Models;
+using Twilio;
+
+using Twilio.Rest.Api.V2010.Account;
+
+using Twilio.Types;
+
+
 
 namespace Notify
 {
@@ -27,8 +32,25 @@ namespace Notify
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your SMS service here to send a text message.
+            
+            string accountSid = ConfigurationManager.AppSettings["AC5432e1da28d7b1e04593a8782b419574"];
+            accountSid = "AC5432e1da28d7b1e04593a8782b419574";
+
+            string authToken = ConfigurationManager.AppSettings["abbb93704fd4e5d3fd69dc8981805093"];
+            authToken = "abbb93704fd4e5d3fd69dc8981805093";
+            string fromNumber = ConfigurationManager.AppSettings["+34911061892"];
+            fromNumber = "+34911061892";
+
+
+            // Initialize the Twilio client
+
+            TwilioClient.Init(accountSid, authToken);
+            MessageResource result = MessageResource.Create(
+                    from: new PhoneNumber(fromNumber),
+                    to: new PhoneNumber(message.Destination),
+                    body: message.Body);
             return Task.FromResult(0);
+
         }
     }
 
