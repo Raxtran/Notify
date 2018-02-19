@@ -6,8 +6,10 @@ namespace Notify.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        //[Display(Name = "Email")]
+        //public string Email { get; set; }
+        [Display(Name = "Nom i cognom")]
+        public string Username { get; set; }
     }
 
     public class ExternalLoginListViewModel
