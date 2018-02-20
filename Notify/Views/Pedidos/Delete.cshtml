@@ -1,4 +1,4 @@
-﻿@model Notify.Models.Producto
+﻿@model Notify.Models.Pedido
 
 @{
     ViewBag.Title = "Delete";
@@ -8,23 +8,23 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Producto</h4>
+    <h4>Pedido</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.codigo_linea)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.codigo_linea)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.precio)
+            @Html.DisplayNameFor(model => model.Usuario_pk)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.precio) €
+            @Html.DisplayFor(model => model.Usuario_pk)
         </dd>
 
     </dl>

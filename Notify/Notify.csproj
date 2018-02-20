@@ -53,6 +53,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -102,6 +103,9 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio, Version=5.9.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.9.6\lib\net451\Twilio.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -191,7 +195,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LineasController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,6 +213,18 @@
     <Compile Include="Migrations\201802161549216_tercera.cs" />
     <Compile Include="Migrations\201802161549216_tercera.Designer.cs">
       <DependentUpon>201802161549216_tercera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802161726109_cuarta.cs" />
+    <Compile Include="Migrations\201802161726109_cuarta.Designer.cs">
+      <DependentUpon>201802161726109_cuarta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191513311_quinta.cs" />
+    <Compile Include="Migrations\201802191513311_quinta.Designer.cs">
+      <DependentUpon>201802191513311_quinta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191831133_sexta.cs" />
+    <Compile Include="Migrations\201802191831133_sexta.Designer.cs">
+      <DependentUpon>201802191831133_sexta.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -282,6 +300,16 @@
     <Content Include="Views\Productos\Details.cshtml" />
     <Content Include="Views\Productos\Edit.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Pedidos\Create.cshtml" />
+    <Content Include="Views\Pedidos\Delete.cshtml" />
+    <Content Include="Views\Pedidos\Details.cshtml" />
+    <Content Include="Views\Pedidos\Edit.cshtml" />
+    <Content Include="Views\Pedidos\Index.cshtml" />
+    <Content Include="Views\Lineas\Create.cshtml" />
+    <Content Include="Views\Lineas\Delete.cshtml" />
+    <Content Include="Views\Lineas\Details.cshtml" />
+    <Content Include="Views\Lineas\Edit.cshtml" />
+    <Content Include="Views\Lineas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,6 +336,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802161549216_tercera.resx">
       <DependentUpon>201802161549216_tercera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802161726109_cuarta.resx">
+      <DependentUpon>201802161726109_cuarta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191513311_quinta.resx">
+      <DependentUpon>201802191513311_quinta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191831133_sexta.resx">
+      <DependentUpon>201802191831133_sexta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

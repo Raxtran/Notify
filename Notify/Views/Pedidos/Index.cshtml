@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Notify.Models.Pedido>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo_linea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario_pk)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo_linea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario_pk)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_pedido }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_pedido }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_pedido })
+        </td>
+    </tr>
+}
+
+</table>

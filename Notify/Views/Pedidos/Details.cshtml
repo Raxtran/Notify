@@ -1,0 +1,34 @@
+﻿@model Notify.Models.Pedido
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo_linea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo_linea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario_pk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario_pk)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_pedido }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
