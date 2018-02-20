@@ -10,6 +10,7 @@ using Notify.Models;
 
 namespace Notify.Controllers
 {
+    [Authorize]
     public class ProductosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

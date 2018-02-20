@@ -49,6 +49,9 @@
     #logejat:hover {
         color: orange;
     }
+    .anuncio_auth {
+
+    }
 }
 
 @media (max-width:768px) {
