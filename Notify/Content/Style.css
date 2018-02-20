@@ -30,6 +30,25 @@
     #loginLink:hover {
         color: orange;       
     }
+    #Google {
+        background-color: transparent;
+        border: 0px;
+        margin-top: 35%;
+        color: whitesmoke;
+    }
+    #Google:hover {
+        color: orange;
+    }
+    #generalLogin {
+        padding-top: 2%;
+    }
+    #logejat {
+        color: whitesmoke;
+
+    }
+    #logejat:hover {
+        color: orange;
+    }
 }
 
 @media (max-width:768px) {
@@ -65,4 +84,22 @@
         color:black;
     }
 
+    #Google {
+        background-color: transparent;
+        border: 0px;
+        margin-top: 35%;
+        color: whitesmoke;
+}
+    #Google:hover {
+        color: orange;
+}
+
+    #logejat {
+        margin-top: 2%;
+        color: whitesmoke;
+    }
+
+    #logejat:hover {
+        color: orange;
+    }
 }

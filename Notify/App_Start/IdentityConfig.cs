@@ -10,10 +10,13 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Notify.Models;
 using Twilio;
-
 using Twilio.Rest.Api.V2010.Account;
-
 using Twilio.Types;
+//using Twilio;
+
+//using Twilio.Rest.Api.V2010.Account;
+
+//using Twilio.Types;
 
 
 
@@ -40,7 +43,7 @@ namespace Notify
             authToken = "abbb93704fd4e5d3fd69dc8981805093";
             string fromNumber = ConfigurationManager.AppSettings["+34911061892"];
             fromNumber = "+34911061892";
-
+            
 
             // Initialize the Twilio client
 
