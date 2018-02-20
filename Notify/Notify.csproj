@@ -226,6 +226,10 @@
     <Compile Include="Migrations\201802191831133_sexta.Designer.cs">
       <DependentUpon>201802191831133_sexta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802201814358_septima.cs" />
+    <Compile Include="Migrations\201802201814358_septima.Designer.cs">
+      <DependentUpon>201802201814358_septima.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -346,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802191831133_sexta.resx">
       <DependentUpon>201802191831133_sexta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802201814358_septima.resx">
+      <DependentUpon>201802201814358_septima.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

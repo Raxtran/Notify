@@ -23,12 +23,20 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.precio) €
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtt)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.codigo }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Torna a la llista", "Index")
 </p>
