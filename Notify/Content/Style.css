@@ -63,6 +63,49 @@
     .anuncio_auth {
 
     }
+
+    th:nth-child(odd) {
+        background: #7b6d5e;
+    }
+
+    tr, td, th {
+        text-align:center;
+    }
+    th {
+        background: #a4927e;
+        border: 1px solid transparent;
+        border-top: 1px solid black;
+    }
+
+    td {
+        background: #d2bea7;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #a4927e;
+    }
+
+        td:nth-child(odd) {
+            background: #e1d3c4;
+        }
+
+    th:nth-child(odd) {
+        background: #7b6d5e;
+    }
+
+    th {
+        background: #a4927e;
+        border: 1px solid transparent;
+        border-top: 1px solid black;
+    }
+
+    td {
+        background: #d2bea7;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #a4927e;
+    }
+    td:nth-child(odd) {
+        background: #e1d3c4;
+    }
+
 }
 
 @media (max-width:768px) {

@@ -10,7 +10,6 @@ using Notify.Models;
 
 namespace Notify.Controllers
 {
-    [Authorize]
     public class ProductosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -47,7 +46,7 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "codigo,nombre,precio")] Producto producto)
+        public ActionResult Create([Bind(Include = "codigo,nombre,precio,qtt")] Producto producto)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "codigo,nombre,precio")] Producto producto)
+        public ActionResult Edit([Bind(Include = "codigo,nombre,precio,qtt")] Producto producto)
         {
             if (ModelState.IsValid)
             {
