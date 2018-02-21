@@ -13,8 +13,8 @@
     }
 
     #logo {
-        margin-top: 1%;
-        margin-bottom: 1%;
+        margin-top: 15%;
+        margin-bottom: 2%;
         margin-left: 1%;
         width: 48px;
         height: 48px;
@@ -25,8 +25,7 @@
         
     }
     p {
-        display
-            :flex;
+        display:flex;
         align-content:center;
     }
     .btn {
@@ -110,7 +109,14 @@
 
 @media (max-width:768px) {
 
+    img {
+        margin-top: 1%;
+        margin-left: 1%;
+        width: 48px;
+        height: 48px;
+    }
     #loginLink {
+
         color: whitesmoke;
     }
     #loginLink:hover {
@@ -137,7 +143,6 @@
     #Google {
         background-color: transparent;
         border: 0px;
-        margin-top: 35%;
         color: whitesmoke;
 }
     #Google:hover {
