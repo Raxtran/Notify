@@ -230,6 +230,10 @@
     <Compile Include="Migrations\201802201814358_septima.Designer.cs">
       <DependentUpon>201802201814358_septima.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802211611174_octavia.cs" />
+    <Compile Include="Migrations\201802211611174_octavia.Designer.cs">
+      <DependentUpon>201802211611174_octavia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802201814358_septima.resx">
       <DependentUpon>201802201814358_septima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802211611174_octavia.resx">
+      <DependentUpon>201802211611174_octavia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

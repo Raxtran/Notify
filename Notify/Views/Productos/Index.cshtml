@@ -23,22 +23,25 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.precio) €
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.qtt)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.codigo }) |
-            @Html.ActionLink("Esborrar", "Delete", new { id=item.codigo })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio) €
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtt)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.codigo }) |
+                @Html.ActionLink("Esborrar", "Delete", new { id = item.codigo })
+            </td>
+        </tr>
+    }
 
 </table>
+<button class="btn">@Html.ActionLink("Tornar", "Index", "Home", null, new { style = "color:black" })</button>
+

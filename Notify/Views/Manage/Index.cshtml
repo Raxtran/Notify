@@ -1,16 +1,16 @@
 ﻿@model Notify.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Administra la teva info";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
+    <h4>Canvía les teves dades</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Contrasenya:</dt>
+       @* <dt>Contrasenya:</dt>
         <dd>
             [
             @if (Model.HasPassword)
@@ -19,7 +19,7 @@
     }
     else
     {
-        @Html.ActionLink("Create", "SetPassword")
+        @Html.ActionLink("Crea", "SetPassword")
 }
             ]
         </dd>
@@ -42,37 +42,44 @@
             @(Model.PhoneNumber ?? "None") [
             @if (Model.PhoneNumber != null)
         {
-            @Html.ActionLink("Change", "AddPhoneNumber")
+            @Html.ActionLink("Canvia", "AddPhoneNumber")
             @: &nbsp;|&nbsp;
-            @Html.ActionLink("Remove", "RemovePhoneNumber")
+            @Html.ActionLink("Esborra", "RemovePhoneNumber")
     }
     else
     {
-        @Html.ActionLink("Add", "AddPhoneNumber")
+        @Html.ActionLink("Afegeix", "AddPhoneNumber")
 }
             ]
         </dd>
         <dt>Autenticacio a dos pasos:</dt>
         <dd>
             @if (Model.TwoFactor)
-        {
-            using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <text>Enabled
-                    <input type="submit" value="Disable" class="btn btn-link" />
-                </text>
-        }
-    }
-    else
     {
-        using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
-            <text>Disabled
-                <input type="submit" value="Enable" class="btn btn-link" />
+            <text>
+                <svg height="29" width="40">
+                    <circle cx="20" cy="20" r="8" stroke="black" stroke-width="1" fill="darkseagreen" />
+                </svg>
+                <input type="submit" value="Desactiva" class="btn btn-link" style="background-color:indianred" />
             </text>
-    }
+}
+}
+else
+{
+using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+        @Html.AntiForgeryToken()
+        <text>
+            <svg height="29" width="40">
+                <circle cx="20" cy="20" r="8" stroke="black" stroke-width="1" fill="indianred" />
+            </svg>
+            <input type="submit" value="Activa" class="btn btn-link" style="background-color:darkseagreen" />
+        </text>
+
+}
 }
         </dd>
     </dl>
