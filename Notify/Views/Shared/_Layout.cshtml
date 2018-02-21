@@ -20,12 +20,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="http://localhost:44354">
-                    <img src="~/favicon.ico" />
+                    <img id="logo" src="~/favicon.ico" />
                 </a>
             </div>
-
-            @Html.ActionLink("Nuestros productos", "Index", "Productos", new { area = "" }, new { @class = "navbar-brand" })
-
 
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")
