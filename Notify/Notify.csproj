@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201802211611174_octavia.Designer.cs">
       <DependentUpon>201802211611174_octavia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802211629585_removephonenumber.cs" />
+    <Compile Include="Migrations\201802211629585_removephonenumber.Designer.cs">
+      <DependentUpon>201802211629585_removephonenumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -319,6 +323,7 @@
     <Content Include="Views\Lineas\Details.cshtml" />
     <Content Include="Views\Lineas\Edit.cshtml" />
     <Content Include="Views\Lineas\Index.cshtml" />
+    <Content Include="Views\Manage\RemovePhoneNumber.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802211611174_octavia.resx">
       <DependentUpon>201802211611174_octavia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802211629585_removephonenumber.resx">
+      <DependentUpon>201802211629585_removephonenumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

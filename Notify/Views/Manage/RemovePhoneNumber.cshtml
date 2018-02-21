@@ -1,0 +1,23 @@
+﻿@model Notify.Models.IndexViewModel
+@{
+                /**/
+
+                ViewBag.Title = "Elimina numero de telèfon";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+
+        <dt>Phone Number:</dt>
+        <dd>
+            @(Model.PhoneNumber ?? "None") [
+            @if (Model.PhoneNumber != null)
+        {
+            @Html.ActionLink("Canvia", "AddPhoneNumber")
+            @: &nbsp;|&nbsp;
+            @Html.ActionLink("Esborra", "RemovePhoneNumber")
+    
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
