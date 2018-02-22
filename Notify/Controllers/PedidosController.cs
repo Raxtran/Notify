@@ -25,9 +25,9 @@ namespace Notify.Controllers
         public ActionResult NuevoPedido() {
 
 
-            if () {
+            /*if () {
 
-            }
+            }*/
 
             return RedirectToAction("Pedidos/Details",1);
 
