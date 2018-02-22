@@ -6,18 +6,19 @@
 {
     <div class="col-md-12">
         <div class="col-md-6">
-            <div id="anuncio" class="anuncio_auth">
+            <div id="prod" class="jumbotron">
                 <h1>Demanar</h1>
-                <img src="~/lellamamosgratis.jpg" />
+                <img id="imagenes" src="~/iconmonstr-checkout-10-240.png" />
                 <p></p>
-                <button>@Html.ActionLink("Demanar", "Index", "Productos", null, new { style = "color:black" })</button>
+                <button style="margin-left:13%" class="btn">@Html.ActionLink("Demanar", "Index", "Productos", null, new { style = "color:black" })</button>
             </div>
         </div>
         <div class="col-md-6">
-            <div id="anuncio" class="anuncio_auth">
-                <h1>Afegir productes</h1>
-                <img />
-                <button>@Html.ActionLink("Afegir productes", "Index", "Productos", null, new { style = "color:black" })</button>
+            <div id="prod" class="jumbotron">
+                <h1>Afegir</h1>
+                <img id="imagenes" src="~/iconmonstr-plus-6-240.png"/>
+                <p></p>
+                <button style="margin-left:5%"class="btn">@Html.ActionLink("Afegir productes", "Index", "Productos", null, new { style = "color:black" })</button>
             </div>
         </div>
     </div>
