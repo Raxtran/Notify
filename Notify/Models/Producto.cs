@@ -12,15 +12,20 @@ namespace Notify.Models
 
         [Key]
         public int codigo { get; set; }
+
         [StringLength(50)]
         [DisplayName("Nom")]
         public String nombre { get; set; }
+
         [DisplayName("Preu")]
+        [Range(0,100)]
         public decimal precio { get; set; }
+
         [DisplayName("Quantitat")]
         [DefaultValue(0)]
+        [Range(0, 1000000)]
         public int qtt { get; set; }
 
-        public virtual List<Linea> envio_nombre_producto { get; set; } = new List<Linea>();
+        public virtual List<Linea> linias_de_pedido_donde_aparece_el_produto { get; set; } = new List<Linea>();
     }
 }

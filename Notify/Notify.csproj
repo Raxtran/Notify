@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44305</IISExpressSSLPort>
+    <IISExpressSSLPort>44354</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
@@ -195,64 +195,19 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LineasController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802151844303_InitialCreate.cs" />
-    <Compile Include="Migrations\201802151844303_InitialCreate.Designer.cs">
-      <DependentUpon>201802151844303_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201802221501525_migracion-inicial.cs" />
+    <Compile Include="Migrations\201802221501525_migracion-inicial.Designer.cs">
+      <DependentUpon>201802221501525_migracion-inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802161542189_segunda.cs" />
-    <Compile Include="Migrations\201802161542189_segunda.Designer.cs">
-      <DependentUpon>201802161542189_segunda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802161549216_tercera.cs" />
-    <Compile Include="Migrations\201802161549216_tercera.Designer.cs">
-      <DependentUpon>201802161549216_tercera.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802161726109_cuarta.cs" />
-    <Compile Include="Migrations\201802161726109_cuarta.Designer.cs">
-      <DependentUpon>201802161726109_cuarta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802191513311_quinta.cs" />
-    <Compile Include="Migrations\201802191513311_quinta.Designer.cs">
-      <DependentUpon>201802191513311_quinta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802191831133_sexta.cs" />
-    <Compile Include="Migrations\201802191831133_sexta.Designer.cs">
-      <DependentUpon>201802191831133_sexta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802201814358_septima.cs" />
-    <Compile Include="Migrations\201802201814358_septima.Designer.cs">
-      <DependentUpon>201802201814358_septima.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211611174_octavia.cs" />
-    <Compile Include="Migrations\201802211611174_octavia.Designer.cs">
-      <DependentUpon>201802211611174_octavia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211629585_removephonenumber.cs" />
-    <Compile Include="Migrations\201802211629585_removephonenumber.Designer.cs">
-      <DependentUpon>201802211629585_removephonenumber.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211732337_floatsopotamadre.cs" />
-    <Compile Include="Migrations\201802211732337_floatsopotamadre.Designer.cs">
-      <DependentUpon>201802211732337_floatsopotamadre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211735333_doublesopotamadre.cs" />
-    <Compile Include="Migrations\201802211735333_doublesopotamadre.Designer.cs">
-      <DependentUpon>201802211735333_doublesopotamadre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211738177_quelastimadecimalsopotamadre.cs" />
-    <Compile Include="Migrations\201802211738177_quelastimadecimalsopotamadre.Designer.cs">
-      <DependentUpon>201802211738177_quelastimadecimalsopotamadre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211739001_quelastimadecimalsopotamadre2.cs" />
-    <Compile Include="Migrations\201802211739001_quelastimadecimalsopotamadre2.Designer.cs">
-      <DependentUpon>201802211739001_quelastimadecimalsopotamadre2.cs</DependentUpon>
+    <Compile Include="Migrations\201802221515465_migracion-public-total.cs" />
+    <Compile Include="Migrations\201802221515465_migracion-public-total.Designer.cs">
+      <DependentUpon>201802221515465_migracion-public-total.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -261,7 +216,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -334,17 +288,12 @@
     <Content Include="Views\Productos\Details.cshtml" />
     <Content Include="Views\Productos\Edit.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Manage\RemovePhoneNumber.cshtml" />
     <Content Include="Views\Pedidos\Create.cshtml" />
     <Content Include="Views\Pedidos\Delete.cshtml" />
     <Content Include="Views\Pedidos\Details.cshtml" />
     <Content Include="Views\Pedidos\Edit.cshtml" />
     <Content Include="Views\Pedidos\Index.cshtml" />
-    <Content Include="Views\Lineas\Create.cshtml" />
-    <Content Include="Views\Lineas\Delete.cshtml" />
-    <Content Include="Views\Lineas\Details.cshtml" />
-    <Content Include="Views\Lineas\Edit.cshtml" />
-    <Content Include="Views\Lineas\Index.cshtml" />
-    <Content Include="Views\Manage\RemovePhoneNumber.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -363,44 +312,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802151844303_InitialCreate.resx">
-      <DependentUpon>201802151844303_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802221501525_migracion-inicial.resx">
+      <DependentUpon>201802221501525_migracion-inicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802161542189_segunda.resx">
-      <DependentUpon>201802161542189_segunda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802161549216_tercera.resx">
-      <DependentUpon>201802161549216_tercera.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802161726109_cuarta.resx">
-      <DependentUpon>201802161726109_cuarta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802191513311_quinta.resx">
-      <DependentUpon>201802191513311_quinta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802191831133_sexta.resx">
-      <DependentUpon>201802191831133_sexta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802201814358_septima.resx">
-      <DependentUpon>201802201814358_septima.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211611174_octavia.resx">
-      <DependentUpon>201802211611174_octavia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211629585_removephonenumber.resx">
-      <DependentUpon>201802211629585_removephonenumber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211732337_floatsopotamadre.resx">
-      <DependentUpon>201802211732337_floatsopotamadre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211735333_doublesopotamadre.resx">
-      <DependentUpon>201802211735333_doublesopotamadre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211738177_quelastimadecimalsopotamadre.resx">
-      <DependentUpon>201802211738177_quelastimadecimalsopotamadre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211739001_quelastimadecimalsopotamadre2.resx">
-      <DependentUpon>201802211739001_quelastimadecimalsopotamadre2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802221515465_migracion-public-total.resx">
+      <DependentUpon>201802221515465_migracion-public-total.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

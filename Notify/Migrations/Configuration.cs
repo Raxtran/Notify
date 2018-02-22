@@ -10,7 +10,6 @@ namespace Notify.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Notify.Models.ApplicationDbContext";
         }
 
         protected override void Seed(Notify.Models.ApplicationDbContext context)

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -14,8 +15,12 @@ namespace Notify.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+
             return userIdentity;
         }
+
+        public virtual List<Pedido> pedidosDelUsuario { get; set; } = new List<Pedido>();
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -37,7 +42,30 @@ namespace Notify.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-///            modelBuilder.Entity<>
+
+            modelBuilder
+                .Entity<Pedido>()
+                .HasRequired(p => p.usuario)
+                .WithMany(u => u.pedidosDelUsuario)
+                .Map(m => m.MapKey("usuario_id"))
+                .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<Linea>()
+                .HasRequired(l => l.pedido)
+                .WithMany(p => p.lineas_de_pedido)
+                .HasForeignKey(l => l.id_pedido)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder
+                .Entity<Linea>()
+                .HasRequired(l => l.producto)
+                .WithMany(p => p.linias_de_pedido_donde_aparece_el_produto)
+                .HasForeignKey(l => l.codigo)
+                .WillCascadeOnDelete(false);
+
+
+
         }
 
     }

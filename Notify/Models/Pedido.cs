@@ -10,13 +10,14 @@ namespace Notify.Models
     {
         [Key]
         public int id_pedido { get; set; }
-        public int codigo_linea { get; set; }
-        double total { get; set; }
-        [StringLength(50)]
-        public String Usuario_pk { get; set; }
-        public virtual Usuario user { get; set; }
 
+        //importe total del pedido
+        public double total { get; set; }
 
-        public virtual List<Linea> envio_id_pedido { get; set; } = new List<Linea>();
+        //fk a usuari que hace el pedido
+        public virtual ApplicationUser usuario { get; set; }
+
+        //propiedad de navegacion a líneas
+        public virtual List<Linea> lineas_de_pedido { get; set; } = new List<Linea>();
     }
 }

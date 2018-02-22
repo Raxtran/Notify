@@ -10,13 +10,17 @@ namespace Notify.Models
     {
         [Key]
         public int id_linea { get; set; }
+
+        //Qtat
         public int cantidad { get; set; }
 
-        [StringLength(50)]
-        public String recibo_nombre { get; set; }
+        //fk a producte
+        public int codigo { get; set; }
         public virtual Producto producto { get; set; }
 
-        public int recibo_codi { get; set; }
-        public virtual Pedido codigo { get; set; }
+        //fk a pedido
+        public int  id_pedido { get; set; }
+        public virtual Pedido pedido { get; set; }
+
     }
 }

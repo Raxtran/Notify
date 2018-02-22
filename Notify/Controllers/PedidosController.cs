@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Notify.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Notify.Controllers
 {
@@ -17,7 +18,8 @@ namespace Notify.Controllers
         // GET: Pedidos
         public ActionResult Index()
         {
-            return View(db.Pedido.ToList());
+            var current_user_id = User.Identity.GetUserId();
+            return View(db.Pedido.Where(p=>p.usuario.Id== current_user_id).ToList());
         }
 
         // GET: Pedidos/Details/5
@@ -46,8 +48,11 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_pedido,codigo_linea,Usuario_pk")] Pedido pedido)
+        public ActionResult Create([Bind(Include = "id_pedido,total")] Pedido pedido)
         {
+            var current_user_id = User.Identity.GetUserId();
+            pedido.usuario = db.Users.Find(current_user_id);
+
             if (ModelState.IsValid)
             {
                 db.Pedido.Add(pedido);
@@ -78,7 +83,7 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_pedido,codigo_linea,Usuario_pk")] Pedido pedido)
+        public ActionResult Edit([Bind(Include = "id_pedido,total")] Pedido pedido)
         {
             if (ModelState.IsValid)
             {

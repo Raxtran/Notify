@@ -7,13 +7,13 @@ namespace Notify.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class septima : IMigrationMetadata
+    public sealed partial class migracionpublictotal : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(septima));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migracionpublictotal));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802201814358_septima"; }
+            get { return "201802221515465_migracion-public-total"; }
         }
         
         string IMigrationMetadata.Source
