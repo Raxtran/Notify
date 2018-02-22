@@ -19,9 +19,19 @@ namespace Notify.Controllers
         public ActionResult Index()
         {
             var current_user_id = User.Identity.GetUserId();
-            return View(db.Pedido.Where(p=>p.usuario.Id== current_user_id).ToList());
+            return View(db.Pedido.Where(p => p.usuario.Id == current_user_id).ToList());
         }
 
+        public ActionResult NuevoPedido() {
+
+
+            if () {
+
+            }
+
+            return RedirectToAction("Pedidos/Details",1);
+
+        }
         // GET: Pedidos/Details/5
         public ActionResult Details(int? id)
         {

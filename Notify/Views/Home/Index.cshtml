@@ -4,51 +4,55 @@
 
 @if (Request.IsAuthenticated)
 {
-    <div class="col-md-12">
-        <div class="col-md-6">
-            <div id="prod" class="jumbotron">
-                <h1>Demanar</h1>
-                <img id="imagenes" src="~/iconmonstr-checkout-10-240.png" />
-                <p></p>
-                <button style="margin-left:13%" class="btn">@Html.ActionLink("Demanar", "Index", "Productos", null, new { style = "color:black" })</button>
-            </div>
+<div class="col-md-12">
+    <div class="col-md-6">
+        <div id="prod" class="jumbotron">
+            <h1>Demanar</h1>
+            <img id="imagenes" src="~/iconmonstr-checkout-10-240.png" />
+            <p></p>
+            <button style="margin-left:13%" class="btn">@Html.ActionLink("Demanar", "NuevoPedido", "Pedidos", null, new { style = "color:black" })</button>
         </div>
+    </div>
+    @if (ViewBag.es_user_admin)  
+    {
         <div class="col-md-6">
             <div id="prod" class="jumbotron">
                 <h1>Afegir</h1>
-                <img id="imagenes" src="~/iconmonstr-plus-6-240.png"/>
+                <img id="imagenes" src="~/iconmonstr-plus-6-240.png" />
                 <p></p>
-                <button style="margin-left:5%"class="btn">@Html.ActionLink("Afegir productes", "Index", "Productos", null, new { style = "color:black" })</button>
+                <button style="margin-left:5%" class="btn">@Html.ActionLink("Afegir productes", "Index", "Productos", null, new { style = "color:black" })</button>
             </div>
         </div>
-    </div>
-}
-else
-{
-    <div id="anuncio" class="jumbotron">
-        <h1>Benvingut a Notify</h1>
-        <p class="lead">Des de aquesta aplicació podràs fer les teves comandes, comprova si la teva cantina escolar disposa d'aquest servei.</p>
-        <p><a href="http://www.staggeringbeauty.com/" class="btn btn-primary btn-lg">Centres amb Notify&raquo;</a></p>
-    </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Noticias 1</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and gives you full control over markup for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Noticias 2</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p>@Html.ActionLink("Contact", "Contact", "Home")</p>
-        </div>
-        <div class="col-md-4">
-            <h2>Noticias 3</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p>@Html.ActionLink("About", "About", "Home")</p>
+    }
+</div>
+}
+        else
+        {
+        <div id="anuncio" class="jumbotron">
+            <h1>Benvingut a Notify</h1>
+            <p class="lead">Des de aquesta aplicació podràs fer les teves comandes, comprova si la teva cantina escolar disposa d'aquest servei.</p>
+            <p><a href="http://www.staggeringbeauty.com/" class="btn btn-primary btn-lg">Centres amb Notify&raquo;</a></p>
         </div>
 
-    </div>
-}
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Noticias 1</h2>
+                <p>
+                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and gives you full control over markup for enjoyable, agile development.
+                </p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Noticias 2</h2>
+                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+                <p>@Html.ActionLink("Contact", "Contact", "Home")</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Noticias 3</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p>@Html.ActionLink("About", "About", "Home")</p>
+            </div>
+
+        </div>
+        }
