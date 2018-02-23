@@ -12,8 +12,8 @@
         background-color: #cdb79e;
     }
     #general {
-    display:flex;
-    justify-content:space-around;
+        display:flex;
+        justify-content:space-around;
     }
     #cont {
         width:45%;
@@ -168,6 +168,8 @@
         background-color: #ff8351;
         border: 0px ;
         color:black;
+        height:60px;
+        width:125px;
     }
 
     #Google {

@@ -29,7 +29,7 @@ namespace Notify.Controllers
 
             }*/
 
-            return RedirectToAction("Pedidos/Details",1);
+            return RedirectToAction("Details/1");
 
         }
         // GET: Pedidos/Details/5
