@@ -26,6 +26,12 @@ namespace Notify.Models
         [Range(0, 1000000)]
         public int qtt { get; set; }
 
+        [DisplayName("Calent?")]
+        public Boolean caliente { get; set; }
+
+        [DisplayName("Beguda?")]
+        public Boolean beguda { get; set; }
+
         public virtual List<Linea> linias_de_pedido_donde_aparece_el_produto { get; set; } = new List<Linea>();
     }
 }

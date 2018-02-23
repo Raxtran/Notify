@@ -1,16 +1,18 @@
 ﻿@model Notify.Models.Producto
 
 @{
-    ViewBag.Title = "Borrar";
+    ViewBag.Title = "Delete";
 }
 
+<h2>Delete</h2>
 
-<h3>Estas segur de que vols borrar aquest producte permanentment?</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
+    <h4>Producto</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre):
+            @Html.DisplayNameFor(model => model.nombre)
         </dt>
 
         <dd>
@@ -18,35 +20,45 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.precio):
+            @Html.DisplayNameFor(model => model.precio)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.precio)€
+            @Html.DisplayFor(model => model.precio)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.qtt):
+            @Html.DisplayNameFor(model => model.qtt)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.qtt)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.caliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.caliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.beguda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.beguda)
+        </dd>
+
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Esborra" class="btn btn-default" 
-            </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
-    <div class="form-actions no-color">
-        @Html.ActionLink("Torna a la llista", "Index")
-    </div>
     }
-    </div>
+</div>

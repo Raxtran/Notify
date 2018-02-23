@@ -34,9 +34,25 @@
             @Html.DisplayFor(model => model.qtt)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.caliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.caliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.beguda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.beguda)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo }) |
-    @Html.ActionLink("Torna a la llista", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>
