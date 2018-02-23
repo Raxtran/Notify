@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201802231614566_bool-caliente.Designer.cs">
       <DependentUpon>201802231614566_bool-caliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802231704483_solo-bebida.cs" />
+    <Compile Include="Migrations\201802231704483_solo-bebida.Designer.cs">
+      <DependentUpon>201802231704483_solo-bebida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -324,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802231614566_bool-caliente.resx">
       <DependentUpon>201802231614566_bool-caliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231704483_solo-bebida.resx">
+      <DependentUpon>201802231704483_solo-bebida.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
