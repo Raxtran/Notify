@@ -17,17 +17,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.total)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_pedido }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_pedido }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_pedido })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_pedido }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_pedido }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_pedido })
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+<a href="https://localhost:44354">Torna</a>
