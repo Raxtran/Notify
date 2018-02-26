@@ -20,6 +20,7 @@ namespace Notify.Controllers
         {
             var current_user_id = User.Identity.GetUserId();
             return View(db.Pedido.Where(p => p.usuario.Id == current_user_id).ToList());
+
         }
 
         // GET: Pedidos/Details/5
@@ -119,16 +120,6 @@ namespace Notify.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        //public ActionResult NuevoPedido(int? id)
-        //{
-        //    Pedido pedido = db.Pedido.Find(id);
-        //    if (pedido == null)
-        //    {
-        //        return View();
-        //    }
-        //    return View(pedido);
-        //}
 
         protected override void Dispose(bool disposing)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ namespace Notify.Models
         public int id_pedido { get; set; }
 
         //importe total del pedido
+        [DefaultValue(0)]
         public double total { get; set; }
 
         //fecha
