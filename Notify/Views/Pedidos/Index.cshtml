@@ -14,6 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.total)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
         <th></th>
     </tr>
 
@@ -21,6 +24,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id_pedido }) |
