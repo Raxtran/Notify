@@ -14,6 +14,11 @@ namespace Notify.Models
         //importe total del pedido
         public double total { get; set; }
 
+        //fecha
+        public DateTime fecha { get; set; } = DateTime.Now;
+
+       
+
         //fk a usuari que hace el pedido
         public virtual ApplicationUser usuario { get; set; }
 

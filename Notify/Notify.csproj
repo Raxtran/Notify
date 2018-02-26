@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44354</IISExpressSSLPort>
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
@@ -241,6 +241,26 @@
     <Compile Include="Migrations\201802231704483_solo-bebida.Designer.cs">
       <DependentUpon>201802231704483_solo-bebida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802261414401_fecha.cs" />
+    <Compile Include="Migrations\201802261414401_fecha.Designer.cs">
+      <DependentUpon>201802261414401_fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802261505211_pedidos.cs" />
+    <Compile Include="Migrations\201802261505211_pedidos.Designer.cs">
+      <DependentUpon>201802261505211_pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802261523403_venga_que_podemos.cs" />
+    <Compile Include="Migrations\201802261523403_venga_que_podemos.Designer.cs">
+      <DependentUpon>201802261523403_venga_que_podemos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802261540148_fecha_de_nuevo.cs" />
+    <Compile Include="Migrations\201802261540148_fecha_de_nuevo.Designer.cs">
+      <DependentUpon>201802261540148_fecha_de_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802261542495_fecha_de_nuevo1.cs" />
+    <Compile Include="Migrations\201802261542495_fecha_de_nuevo1.Designer.cs">
+      <DependentUpon>201802261542495_fecha_de_nuevo1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -326,6 +346,7 @@
     <Content Include="Views\Pedidos\Details.cshtml" />
     <Content Include="Views\Pedidos\Edit.cshtml" />
     <Content Include="Views\Pedidos\Index.cshtml" />
+    <Content Include="Views\Pedidos\NuevoPedido.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -355,6 +376,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802231704483_solo-bebida.resx">
       <DependentUpon>201802231704483_solo-bebida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802261414401_fecha.resx">
+      <DependentUpon>201802261414401_fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802261505211_pedidos.resx">
+      <DependentUpon>201802261505211_pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802261523403_venga_que_podemos.resx">
+      <DependentUpon>201802261523403_venga_que_podemos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802261540148_fecha_de_nuevo.resx">
+      <DependentUpon>201802261540148_fecha_de_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802261542495_fecha_de_nuevo1.resx">
+      <DependentUpon>201802261542495_fecha_de_nuevo1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

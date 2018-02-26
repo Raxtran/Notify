@@ -6,8 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Notify.Models;
 using Microsoft.AspNet.Identity;
+using Notify.Models;
 
 namespace Notify.Controllers
 {
@@ -22,16 +22,6 @@ namespace Notify.Controllers
             return View(db.Pedido.Where(p => p.usuario.Id == current_user_id).ToList());
         }
 
-        public ActionResult NuevoPedido() {
-
-
-            /*if () {
-
-            }*/
-
-            return RedirectToAction("Details/1");
-
-        }
         // GET: Pedidos/Details/5
         public ActionResult Details(int? id)
         {
@@ -58,7 +48,7 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_pedido,total")] Pedido pedido)
+        public ActionResult Create([Bind(Include = "id_pedido,total,fecha")] Pedido pedido)
         {
             var current_user_id = User.Identity.GetUserId();
             pedido.usuario = db.Users.Find(current_user_id);
@@ -93,7 +83,7 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_pedido,total")] Pedido pedido)
+        public ActionResult Edit([Bind(Include = "id_pedido,total,fecha")] Pedido pedido)
         {
             if (ModelState.IsValid)
             {
@@ -129,6 +119,16 @@ namespace Notify.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        //public ActionResult NuevoPedido(int? id)
+        //{
+        //    Pedido pedido = db.Pedido.Find(id);
+        //    if (pedido == null)
+        //    {
+        //        return View();
+        //    }
+        //    return View(pedido);
+        //}
 
         protected override void Dispose(bool disposing)
         {
