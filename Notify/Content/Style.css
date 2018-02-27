@@ -29,13 +29,16 @@
         height: 150px;
         width: 150px;
     }
+    .checkboxeses {
+        height:50px;
+        width:50px;
+    } 
     #prod {
-        display:flex;
-        flex-direction:column;
+        display: flex;
+        flex-direction: column;
         margin-top: 3%;
         width: 90%;
-        align-items:center;
-
+        align-items: center;
     }
     img {
         width: 250px;
@@ -172,6 +175,14 @@
         width:125px;
     }
 
+    #beguda {
+        width: 35px;
+        height: 35px;
+    }
+    #caliente{
+        width: 35px;
+        height: 35px;
+    }
     #Google {
         background-color: transparent;
         border: 0px;
