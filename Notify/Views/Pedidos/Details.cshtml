@@ -1,34 +1,19 @@
 ﻿@model Notify.Models.Pedido
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalls";
 }
 
-<h2>Details</h2>
+<h2>Comandes</h2>
 
 <div>
-    <h4>Pedido</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.total)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.total)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.fecha)
-        </dd>
-
     </dl>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_pedido }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Torna", "Index") | 
+    @Html.ActionLink("Afegeix productes", "Create","Lineas")
+
 </p>

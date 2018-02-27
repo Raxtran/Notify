@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Notify.Models.Linea>
+
+@{
+    ViewBag.Title = "Linies";
+}
+
+<h2>Les meves linies</h2>
+
+<p>
+    @Html.ActionLink("Afegeix una altra linea", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pedido.id_pedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producto.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pedido.id_pedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.producto.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.ActionLink("Edita", "Edit", new { id=item.id_linea }) |
+            @Html.ActionLink("Esborra", "Delete", new { id=item.id_linea })
+        </td>
+    </tr>
+}
+
+</table>
