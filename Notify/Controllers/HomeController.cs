@@ -17,6 +17,13 @@ namespace Notify.Controllers
 
         public ActionResult Index()
         {
+
+            var pedido_de_hoy = db.Pedido.Where(d => d.fecha.Day == DateTime.Today.Day);
+
+            ViewBag.pedidoDeHoy = pedido_de_hoy.Any();
+
+            
+
             if (Request.IsAuthenticated)
             {
                 var current_user_id = User.Identity.GetUserId();
