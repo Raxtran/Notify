@@ -4,7 +4,7 @@
     ViewBag.Title = "Linies";
 }
 
-<h2>Les meves linies</h2>
+<h2>Linies de la comanda</h2>
 
 <p>
     @Html.ActionLink("Afegeix una altra linea", "Create")
@@ -12,10 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.pedido.id_pedido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.producto.nombre)
+            @Html.DisplayNameFor(model => model.producto.codigo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.cantidad)
@@ -25,9 +22,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.pedido.id_pedido)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.producto.nombre)
         </td>
