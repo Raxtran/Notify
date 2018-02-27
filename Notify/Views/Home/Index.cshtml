@@ -10,8 +10,9 @@
             <h1>Demanar</h1>
             <img id="imagenes" src="~/iconmonstr-checkout-10-240.png" />
             <p></p>
-            @if () {
-                <button class="btn">@Html.ActionLink("Demanar", "Pedidos", "Pedidos", null, new { style = "color:black" })</button>
+        <!--Ya existe producto-->
+            @if (ViewBag.pedidoDeHoy) {
+                <button class="btn">@Html.ActionLink("Les meves comandes", "Index", "Pedidos", null, new { style = "color:black" })</button>
             } else {
                 <button class="btn">@Html.ActionLink("Demanar", "Create", "Pedidos", null, new { style = "color:black" })</button>
 
