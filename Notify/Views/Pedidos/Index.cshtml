@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<Notify.Models.Pedido>
 
 @{
-    ViewBag.Title = "Comandes";
+                /**/
+
+                ViewBag.Title = "Comandes";
 }
 
 <h2>Comandes</h2>
@@ -21,22 +23,21 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.total)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
-        <td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
 
-            @Html.ActionLink("Detalls de la comanda", "Index","Lineas", new { id = item.id_pedido }, null) |
-            @Html.ActionLink("Esborra", "Delete", new { id = item.id_pedido }, null)
-        </td>
-    </tr>
+                @Html.ActionLink("Detalls de la comanda", "Index", "Lineas", new { id = item.id_pedido }, null) |
+                @Html.ActionLink("Esborra", "Delete", new { id = item.id_pedido }, null)
+            </td>
+        </tr>
     }
 
 </table>
 
-
-<a href="https://localhost:44354">Torna</a>
+@Html.ActionLink("Torna", "Index", "Home")
