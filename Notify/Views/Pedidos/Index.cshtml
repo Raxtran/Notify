@@ -30,8 +30,8 @@
         </td>
         <td>
 
-            @Html.ActionLink("Detalls de la comanda", "Details", new { id = item.id_pedido }) |
-            @Html.ActionLink("Esborra", "Delete", new { id = item.id_pedido })
+            @Html.ActionLink("Detalls de la comanda", "Index","Lineas", new { id = item.id_pedido }, null) |
+            @Html.ActionLink("Esborra", "Delete", new { id = item.id_pedido }, null)
         </td>
     </tr>
     }

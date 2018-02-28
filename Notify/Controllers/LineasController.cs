@@ -15,10 +15,13 @@ namespace Notify.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Lineas
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var linea = db.Linea.Include(l => l.pedido).Include(l => l.producto);
-            return View(linea.ToList());
+
+            Pedido pedido = db.Pedido.Find(id);
+            var linies = pedido.lineas_de_pedido.ToList();
+            //            var linea = db.Linea.Include(l => l.pedido).Include(l => l.producto);
+            return View(linies);
         }
 
         // GET: Lineas/Details/5
@@ -55,7 +58,7 @@ namespace Notify.Controllers
             {
                 db.Linea.Add(linea);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index",new { id = linea.id_pedido });
             }
 
             ViewBag.id_pedido = new SelectList(db.Pedido, "id_pedido", "id_pedido", linea.id_pedido);
