@@ -11,6 +11,7 @@ namespace Notify.Models
     {
 
         [Key]
+        [DisplayName("Nom")]
         public int codigo { get; set; }
 
         [StringLength(50)]

@@ -14,9 +14,11 @@ namespace Notify.Models
 
         //importe total del pedido
         [DefaultValue(0)]
+        [DisplayName("Total")]
         public double total { get; set; }
 
         //fecha
+        [DisplayName("Data")]
         public DateTime fecha { get; set; } = DateTime.Now;
 
        

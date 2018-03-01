@@ -32,9 +32,9 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Borra" class="btn btn-default" /> |
-            @Html.ActionLink("Torna", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Borra" class="btn btn-default" /> |
+        @Html.ActionLink("Torna", "Index", new { id = ViewBag.idPedido })
+    </div>
     }
 </div>
