@@ -57,12 +57,14 @@ namespace Notify.Controllers
         public ActionResult Create(int idPedido, [Bind(Include = "id_linea,cantidad,codigo,id_pedido")] Linea linea, Producto producto)
         {
            
-            if (linea.cantidad < producto.qtt) {
-                producto.qtt = producto.qtt - linea.cantidad;
-            }
+            
+
             linea.id_pedido = idPedido;
             if (ModelState.IsValid)
             {
+
+                var prod = db.Producto.Find(producto.codigo);
+                prod.qtt = prod.qtt - linea.cantidad;
                 db.Linea.Add(linea);
                 db.SaveChanges();
                 return RedirectToAction("Index",new { id = linea.id_pedido });
