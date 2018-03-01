@@ -21,6 +21,7 @@ namespace Notify.Controllers
             Pedido pedido = db.Pedido.Find(id);
             var linies = pedido.lineas_de_pedido.ToList();
             //            var linea = db.Linea.Include(l => l.pedido).Include(l => l.producto);
+            ViewBag.idPedido = pedido.id_pedido;
             return View(linies);
         }
 
@@ -40,9 +41,9 @@ namespace Notify.Controllers
         }
 
         // GET: Lineas/Create
-        public ActionResult Create()
+        public ActionResult Create(int idPedido)
         {
-            ViewBag.id_pedido = new SelectList(db.Pedido, "id_pedido", "id_pedido");
+            //ViewBag.id_pedido = new SelectList(db.Pedido, "id_pedido", "id_pedido");
             ViewBag.codigo = new SelectList(db.Producto, "codigo", "nombre");
             return View();
         }
@@ -52,8 +53,9 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_linea,cantidad,codigo,id_pedido")] Linea linea)
+        public ActionResult Create(int idPedido, [Bind(Include = "id_linea,cantidad,codigo,id_pedido")] Linea linea)
         {
+            linea.id_pedido = idPedido;
             if (ModelState.IsValid)
             {
                 db.Linea.Add(linea);
@@ -61,7 +63,7 @@ namespace Notify.Controllers
                 return RedirectToAction("Index",new { id = linea.id_pedido });
             }
 
-            ViewBag.id_pedido = new SelectList(db.Pedido, "id_pedido", "id_pedido", linea.id_pedido);
+            //ViewBag.id_pedido = new SelectList(db.Pedido, "id_pedido", "id_pedido", linea.id_pedido);
             ViewBag.codigo = new SelectList(db.Producto, "codigo", "nombre", linea.codigo);
             return View(linea);
         }
