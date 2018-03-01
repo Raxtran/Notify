@@ -19,6 +19,7 @@ namespace Notify.Controllers
         {
 
             Pedido pedido = db.Pedido.Find(id);
+            
             var linies = pedido.lineas_de_pedido.ToList();
             //            var linea = db.Linea.Include(l => l.pedido).Include(l => l.producto);
             ViewBag.idPedido = pedido.id_pedido;
@@ -76,6 +77,7 @@ namespace Notify.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Linea linea = db.Linea.Find(id);
+            ViewBag.idPedido = linea.id_pedido;
             if (linea == null)
             {
                 return HttpNotFound();
@@ -94,9 +96,10 @@ namespace Notify.Controllers
         {
             if (ModelState.IsValid)
             {
+                var idPedido = linea.id_pedido;
                 db.Entry(linea).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = idPedido });
             }
             ViewBag.id_pedido = new SelectList(db.Pedido, "id_pedido", "id_pedido", linea.id_pedido);
             ViewBag.codigo = new SelectList(db.Producto, "codigo", "nombre", linea.codigo);
@@ -111,6 +114,8 @@ namespace Notify.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Linea linea = db.Linea.Find(id);
+            ViewBag.idPedido = linea.id_pedido;
+
             if (linea == null)
             {
                 return HttpNotFound();
@@ -124,9 +129,12 @@ namespace Notify.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Linea linea = db.Linea.Find(id);
+            ViewBag.idPedido = linea.id_pedido;
+
+            var idPedido = linea.id_pedido;
             db.Linea.Remove(linea);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = idPedido });
         }
 
         protected override void Dispose(bool disposing)

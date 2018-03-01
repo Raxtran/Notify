@@ -14,6 +14,7 @@ namespace Notify.Models
 
         //Qtat
         [DisplayName("Quantitat")]
+        [Range(0, 1000000)]
         public int cantidad { get; set; }
 
         //fk a producte
