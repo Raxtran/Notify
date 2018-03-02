@@ -15,7 +15,7 @@ namespace Notify.Models
         //importe total del pedido
         [DefaultValue(0)]
         [DisplayName("Total")]
-        public double total { get; set; }
+        public decimal total { get; set; }
 
         //fecha
         [DisplayName("Data")]

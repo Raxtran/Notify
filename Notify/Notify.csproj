@@ -226,9 +226,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803021631195_preu-decimal-final.cs" />
-    <Compile Include="Migrations\201803021631195_preu-decimal-final.Designer.cs">
-      <DependentUpon>201803021631195_preu-decimal-final.cs</DependentUpon>
+    <Compile Include="Migrations\201803021652492_todo-decimal.cs" />
+    <Compile Include="Migrations\201803021652492_todo-decimal.Designer.cs">
+      <DependentUpon>201803021652492_todo-decimal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -342,8 +342,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803021631195_preu-decimal-final.resx">
-      <DependentUpon>201803021631195_preu-decimal-final.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803021652492_todo-decimal.resx">
+      <DependentUpon>201803021652492_todo-decimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

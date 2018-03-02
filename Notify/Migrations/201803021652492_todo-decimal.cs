@@ -3,7 +3,7 @@ namespace Notify.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class preudecimalfinal : DbMigration
+    public partial class tododecimal : DbMigration
     {
         public override void Up()
         {
@@ -28,7 +28,7 @@ namespace Notify.Migrations
                 c => new
                     {
                         id_pedido = c.Int(nullable: false, identity: true),
-                        total = c.Double(nullable: false),
+                        total = c.Decimal(nullable: false, precision: 18, scale: 2),
                         fecha = c.DateTime(nullable: false),
                         usuario_id = c.String(nullable: false, maxLength: 128),
                     })

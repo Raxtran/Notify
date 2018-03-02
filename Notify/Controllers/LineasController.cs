@@ -54,17 +54,21 @@ namespace Notify.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(int idPedido, [Bind(Include = "id_linea,cantidad,codigo,id_pedido,preu")] Linea linea, Producto producto)
+        public ActionResult Create(int idPedido, [Bind(Include = "id_linea,cantidad,codigo,id_pedido,preu")] Linea linea, Producto producto,Pedido pedido)
         {
            
-
+            
 
             linea.id_pedido = idPedido;
             if (ModelState.IsValid)
             {
 
                 var prod = db.Producto.Find(producto.codigo);
-                linea.preu = prod.precio * linea.preu;
+                
+
+                linea.preu = prod.precio * linea.cantidad;
+                var thisPedido = db.Pedido.Find(idPedido);
+                thisPedido.total = thisPedido.total + linea.preu;
 
                 prod.qtt = prod.qtt - linea.cantidad;
                 

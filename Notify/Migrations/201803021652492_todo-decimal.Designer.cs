@@ -7,13 +7,13 @@ namespace Notify.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class preudecimalfinal : IMigrationMetadata
+    public sealed partial class tododecimal : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(preudecimalfinal));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(tododecimal));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803021631195_preu-decimal-final"; }
+            get { return "201803021652492_todo-decimal"; }
         }
         
         string IMigrationMetadata.Source
