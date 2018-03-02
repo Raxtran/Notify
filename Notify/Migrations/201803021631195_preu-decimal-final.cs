@@ -3,7 +3,7 @@ namespace Notify.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migracioninicial : DbMigration
+    public partial class preudecimalfinal : DbMigration
     {
         public override void Up()
         {
@@ -13,6 +13,7 @@ namespace Notify.Migrations
                     {
                         id_linea = c.Int(nullable: false, identity: true),
                         cantidad = c.Int(nullable: false),
+                        preu = c.Decimal(nullable: false, precision: 18, scale: 2),
                         codigo = c.Int(nullable: false),
                         id_pedido = c.Int(nullable: false),
                     })
@@ -27,6 +28,8 @@ namespace Notify.Migrations
                 c => new
                     {
                         id_pedido = c.Int(nullable: false, identity: true),
+                        total = c.Double(nullable: false),
+                        fecha = c.DateTime(nullable: false),
                         usuario_id = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.id_pedido)
@@ -99,6 +102,8 @@ namespace Notify.Migrations
                         nombre = c.String(maxLength: 50),
                         precio = c.Decimal(nullable: false, precision: 18, scale: 2),
                         qtt = c.Int(nullable: false),
+                        caliente = c.Boolean(nullable: false),
+                        beguda = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.codigo);
             

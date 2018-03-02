@@ -11,6 +11,10 @@
     body {
         background-color: #cdb79e;
     }
+    #total {
+        margin-left:6%;
+
+    }
     #general {
         display:flex;
         justify-content:space-around;
@@ -18,6 +22,9 @@
     #cont {
         width:45%;
         }
+    #quantitat {
+        width: 10%;
+        height: 30px;    }
     #logo {
         margin-top: 15%;
         margin-bottom: 2%;

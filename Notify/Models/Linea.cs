@@ -14,12 +14,12 @@ namespace Notify.Models
 
         //Qtat
         [DisplayName("Quantitat")]
-        [Range(0, 1000000)]
+        [Range(1, 1000000)]
         public int cantidad { get; set; }
 
-        [DisplayName("Preu")]
+        [DisplayName("Total")]
         [DefaultValue(0)]
-        public int preu { get; set; }
+        public decimal preu { get; set; }
 
         //fk a producte
         [DisplayName("Nom")]

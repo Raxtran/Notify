@@ -6,14 +6,14 @@ namespace Notify.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ver_fecha : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+    public sealed partial class preudecimalfinal : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ver_fecha));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(preudecimalfinal));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802261738472_ver_fecha"; }
+            get { return "201803021631195_preu-decimal-final"; }
         }
         
         string IMigrationMetadata.Source
