@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Notify.Models;
 using System.Globalization;
 
+
 namespace Notify.Controllers
 {
     [RequireHttps]
@@ -18,16 +19,14 @@ namespace Notify.Controllers
 
         public ActionResult Index()
         {
-
-            var pedido_de_hoy = db.Pedido.Where(d => d.fecha.Day == DateTime.Today.Day);
-
-            ViewBag.pedidoDeHoy = pedido_de_hoy.Any();
-
             
-
             if (Request.IsAuthenticated)
             {
                 var current_user_id = User.Identity.GetUserId();
+
+                var pedido_de_hoy = db.Pedido.Where(d => d.fecha.Day == DateTime.Today.Day && d.usuario.Id == current_user_id);
+
+                ViewBag.pedidoDeHoy = pedido_de_hoy.Any();
                 ViewBag.Usuario = db.Users.Find(current_user_id);
             }
 
