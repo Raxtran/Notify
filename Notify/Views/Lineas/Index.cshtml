@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.cantidad)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preu)
+        </th>
         <th></th>
     </tr>
 
@@ -27,6 +30,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.preu)
         </td>
         <td>
             <!--@Html.ActionLink("Edita", "Edit", new { id=item.id_linea }) |-->

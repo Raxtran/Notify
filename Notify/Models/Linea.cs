@@ -17,7 +17,7 @@ namespace Notify.Models
         [Range(0, 1000000)]
         public int cantidad { get; set; }
 
-        [DisplayName("Quantitat")]
+        [DisplayName("Preu")]
         [DefaultValue(0)]
         public int preu { get; set; }
 
