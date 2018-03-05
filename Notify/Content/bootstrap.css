@@ -6726,6 +6726,16 @@ th.hidden-lg,
 td.hidden-lg {
   display: table-cell !important;
 }
+#logos {
+    margin-left: 45px;
+    margin-top:40px;
+    width: 40%;
+    height: 60px;
+}
+#logodina {
+    width: 45%;
+    height:160px;
+}
 
 @media (max-width: 767px) {
   .hidden-lg.hidden-xs {
@@ -6813,4 +6823,5 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+  
 }
