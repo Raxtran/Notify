@@ -25,7 +25,7 @@ namespace Notify.Controllers
             var id_current_user = User.Identity.GetUserId();
 
 
-            if (id_current_user == pedido.usuario.Id) {
+            if (id_current_user == pedido.usuario.Id || ViewBag.idPedido == id_current_user) {
                 var linies = pedido.lineas_de_pedido.ToList();
                 //            var linea = db.Linea.Include(l => l.pedido).Include(l => l.producto);
                 ViewBag.idPedido = pedido.id_pedido;
