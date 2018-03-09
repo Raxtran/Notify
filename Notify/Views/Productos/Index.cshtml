@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Afegeix un nou producte", "Create")
 </p>
-<table class="table">
+<table class="table" id="tablaConBusqueda">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.nombre)
@@ -57,4 +57,7 @@
 
 </table>
 
-@Html.ActionLink("Torna","Index","Home")
+<script type="text/javascript" src="~/Scripts/JavaScript.js"></script>
+
+
+@Html.ActionLink("Torna", "Index", "Home")
