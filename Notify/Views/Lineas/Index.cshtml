@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Afegeix una altra linea", "Create", new { idPedido = ViewBag.idPedido }, null)
 </p>
-<table class="table">
+<table class="table" id="tablaConBusqueda">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.producto.codigo)
@@ -23,22 +23,31 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.producto.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cantidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.preu)
-        </td>
-        <td>
-            <!--@Html.ActionLink("Edita", "Edit", new { id=item.id_linea }) |-->
-            @Html.ActionLink("Esborra", "Delete", new { id = item.id_linea })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preu)
+            </td>
+            <td>
+                <!--@Html.ActionLink("Edita", "Edit", new { id=item.id_linea }) |-->
+                @Html.ActionLink("Esborra", "Delete", new { id = item.id_linea })
+            </td>
+        </tr>
+    }
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('#tablaConBusqueda').DataTable({
+            "order": [[0, "desc"]]
+        });
+    });
+</script>
+

@@ -60,8 +60,8 @@ namespace Notify
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "850223803670-jro5n96a9tttm563hfctkd0m1cs52dlu.apps.googleusercontent.com",
-                ClientSecret = "ap2S3vlUotrxZHjog-LAkEzM"
+                ClientId = "850223803670-8uutljagqt56qskfj38e0sf7beam181v.apps.googleusercontent.com",
+                ClientSecret = "mncxeA8Jy0UoRvP7_bF4y8ZE"
             });
         }
     }

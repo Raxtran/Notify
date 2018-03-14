@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Notify.Models;
 
 namespace Notify.Controllers
@@ -20,11 +21,22 @@ namespace Notify.Controllers
         {
 
             Pedido pedido = db.Pedido.Find(id);
-            
-            var linies = pedido.lineas_de_pedido.ToList();
-            //            var linea = db.Linea.Include(l => l.pedido).Include(l => l.producto);
-            ViewBag.idPedido = pedido.id_pedido;
-            return View(linies);
+
+
+            var id_current_user = User.Identity.GetUserId();
+
+
+            if (id_current_user == pedido.usuario.Id || ViewBag.idPedido == id_current_user) {
+                var linies = pedido.lineas_de_pedido.ToList();
+                //            var linea = db.Linea.Include(l => l.pedido).Include(l => l.producto);
+                ViewBag.idPedido = pedido.id_pedido;
+                return View(linies);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Pedidos");
+            }
+
         }
 
         // GET: Lineas/Details/5
@@ -65,17 +77,19 @@ namespace Notify.Controllers
             {
 
                 var prod = db.Producto.Find(producto.codigo);
-                
+
 
                 linea.preu = prod.precio * linea.cantidad;
                 var thisPedido = db.Pedido.Find(idPedido);
                 thisPedido.total = thisPedido.total + linea.preu;
 
                 prod.qtt = prod.qtt - linea.cantidad;
-                
+
                 db.Linea.Add(linea);
                 db.SaveChanges();
-                return RedirectToAction("Index",new { id = linea.id_pedido });
+                return RedirectToAction("Index", new { id = linea.id_pedido });
+            }
+            else {
             }
 
             //ViewBag.id_pedido = new SelectList(db.Pedido, "id_pedido", "id_pedido", linea.id_pedido);

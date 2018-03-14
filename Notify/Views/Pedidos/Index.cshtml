@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Notify.Models.Pedido>
 
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Comandes";
+    ViewBag.Title = "Comandes";
 }
 
 <h2>Comandes</h2>
@@ -11,7 +11,7 @@
     <strong>Correcte!</strong> @TempData["Mensaje"]
 </div>
 
-<table class="table">
+<table class="table" id="tablaConBusqueda">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.total)
@@ -41,5 +41,6 @@
     }
 
 </table>
+<script type="text/javascript" src="~/Scripts/JavaScript.js"></script>
 
 @Html.ActionLink("Torna", "Index", "Home")
