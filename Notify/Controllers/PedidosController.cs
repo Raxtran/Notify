@@ -12,6 +12,7 @@ using Notify.Models;
 
 namespace Notify.Controllers
 {
+    [Authorize]
     public class PedidosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -19,6 +20,7 @@ namespace Notify.Controllers
         // GET: Pedidos
         public ActionResult Index()
         {
+            
             var current_user_id = User.Identity.GetUserId();
             return View(db.Pedido.Where(p => p.usuario.Id == current_user_id).ToList());
 
@@ -44,6 +46,7 @@ namespace Notify.Controllers
         // GET: Pedidos/Create
         public ActionResult Create()
         {
+            
             return View();
         }
 
@@ -59,14 +62,18 @@ namespace Notify.Controllers
 
             if (ModelState.IsValid)
             {
+                
                 db.Pedido.Add(pedido);
                 db.SaveChanges();
+                TempData["Mensaje"] = "Comanda creada correctament";
                 return RedirectToAction("Index");
             }
 
             return View(pedido);
         }
 
+        
+       
         // GET: Pedidos/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -91,6 +98,8 @@ namespace Notify.Controllers
         {
             if (ModelState.IsValid)
             {
+                
+               
                 db.Entry(pedido).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -121,6 +130,7 @@ namespace Notify.Controllers
             Pedido pedido = db.Pedido.Find(id);
             db.Pedido.Remove(pedido);
             db.SaveChanges();
+            TempData["Mensaje"] = "Comanda esborrada correctament";
             return RedirectToAction("Index");
         }
 

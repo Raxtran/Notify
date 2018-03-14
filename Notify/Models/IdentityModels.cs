@@ -26,7 +26,7 @@ namespace Notify.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ApplicationDbContext", throwIfV1Schema: false)
+            : base("DinaHosting", throwIfV1Schema: false)
         {
         }
 

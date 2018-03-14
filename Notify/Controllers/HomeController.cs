@@ -10,6 +10,7 @@ using System.Globalization;
 
 namespace Notify.Controllers
 {
+    [Authorize]
     [RequireHttps]
     public class HomeController : Controller
     {
@@ -46,6 +47,11 @@ namespace Notify.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult Tempdata()
+        {
+            TempData["Mensaje"] = "Comanda creada correctament";
             return View();
         }
     }
