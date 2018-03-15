@@ -65,7 +65,7 @@ namespace Notify.Controllers
                 
                 db.Pedido.Add(pedido);
                 db.SaveChanges();
-                TempData["Mensaje"] = "Comanda creada correctament";
+                TempData["Mensaje"] = "<strong>Comanda creada correctament</strong>";
                 return RedirectToAction("Index");
             }
 

@@ -7,10 +7,16 @@
 }
 
 <h2>Comandes</h2>
-<div class="alert alert-success" role="alert">
-    <strong>Correcte!</strong> @TempData["Mensaje"]
-</div>
+@if (TempData["Mensaje"] == null)
+{
 
+}
+else
+{ 
+<div class="alert alert-success" role="alert">
+    <strong>@TempData["Mensaje"]</strong>
+</div>
+}
 <table class="table" id="tablaConBusqueda">
     <tr>
         <th>
