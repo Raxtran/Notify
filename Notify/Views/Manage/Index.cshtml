@@ -1,0 +1,87 @@
+﻿@model Notify.Models.IndexViewModel
+@{
+    ViewBag.Title = "Administra la teva info";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Canvía les teves dades</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       @* <dt>Contrasenya:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+        {
+            @Html.ActionLink("Change your password", "ChangePassword")
+    }
+    else
+    {
+        @Html.ActionLink("Crea", "SetPassword")
+}
+            ]
+        </dd>
+        @*   <dt>Comprova amb que has entrat:</dt>
+        <dd>
+            @Model.Logins.Count [
+            @Html.ActionLink("Manage", "ManageLogins") ]
+        </dd>
+
+            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+             See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+             Uncomment the following block after you have set up two-factor authentication
+        *@
+
+        <dt>Numero de telèfon:</dt>
+        <dd>
+            @(Model.PhoneNumber ?? "None") [
+            @if (Model.PhoneNumber != null)
+        {
+            @Html.ActionLink("Canvia", "AddPhoneNumber")
+            @: &nbsp;|&nbsp;
+            @Html.ActionLink("Esborra", "RemovePhoneNumber")
+    }
+    else
+    {
+        @Html.ActionLink("Afegeix", "AddPhoneNumber")
+}
+            ]
+        </dd>
+        <dt>Autenticacio a dos pasos:</dt>
+        <dd>
+            @if (Model.TwoFactor)
+    {
+        using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <text>
+            
+                <svg height="29" width="40">
+                    <circle cx="20" cy="20" r="8" stroke="black" stroke-width="1" fill="darkseagreen" />
+                </svg>
+                <input type="submit" value="Desactiva" class="btn btn-link" style="background-color:indianred" />
+            </text>
+}
+}
+else
+{
+using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+        @Html.AntiForgeryToken()
+        <text>
+            <svg height="29" width="40">
+                <circle cx="20" cy="20" r="8" stroke="black" stroke-width="1" fill="indianred" />
+            </svg>
+            <input type="submit" value="Activa" class="btn btn-link" style="background-color:darkseagreen" />
+        </text>
+
+}
+}
+        </dd>
+    </dl>
+</div>
